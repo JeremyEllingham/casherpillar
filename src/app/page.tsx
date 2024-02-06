@@ -105,7 +105,21 @@ export default function Home() {
           <p className="text-lg">FUNDING</p>
 
           <p>Last Funded - x</p>
-          <p>Flipstarters ({podcastFlipstarters.length.toString()}) - Requesting Funding ({requestingFlipstarterCount}) - In Progress ({inProgressFlipstarterCount}) - Delivered ({deliveredFlipstarterCount}) - Failed ({failedFlipstarterCount})</p>
+          <div>
+            <span class="pr-2">Flipstarters ({podcastFlipstarters.length.toString()})</span>
+            <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
+              Requesting Funding ({requestingFlipstarterCount})
+            </span>
+            <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-orange-600 bg-orange-200 uppercase last:mr-0 mr-1">
+              In Progress ({inProgressFlipstarterCount})
+            </span>
+            <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-emerald-600 bg-emerald-200 uppercase last:mr-0 mr-1">
+              Delivered ({deliveredFlipstarterCount})
+            </span>
+            <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-600 bg-red-200 uppercase last:mr-0 mr-1">
+              Failed ({failedFlipstarterCount})
+            </span>
+          </div>
           <p>
             #1:
           </p>
