@@ -8,46 +8,50 @@ export default function Home() {
       name: "Episodes 76 - 85",
       number: 1,
       status: "DELIVERED",
-      launched: "",
-      funded: "",
-      delivered: "",
-      askBCH: "",
-      askUSD: ""
+      launchDate: "13th April 2023",
+      fundDate: "13th April 2023",
+      deliveryDate: "18th July 2023",
+      askBCH: "20",
+      bchUsdPrice: "125",
+      askUSD: "2 500"
     },
     {
       id: 2,
       name: "Episodes 86 - 95",
       number: 2,
       status: "DELIVERED",
-      launched: "30th July 2023",
-      funded: "1st August 2023",
-      delivered: "",
-      askBCH: "",
-      askUSD: ""
+      launchDate: "30th July 2023",
+      fundDate: "1st August 2023",
+      deliveryDate: "24th October 2023",
+      askBCH: "12",
+      bchUsdPrice: "250",
+      askUSD: "3 000"
     },
     {
       id: 3,
       name: "Episodes 96 - 105",
       number: 3,
       status: "DELIVERED",
-      launched: "",
-      funded: "",
-      delivered: "",
-      askBCH: "",
-      askUSD: ""
+      launchDate: "November 3rd 2023",
+      fundDate: "November 30th 2023",
+      deliveryDate: "January 26th 2024",
+      askBCH: "35",
+      bchUsdPrice: "250",
+      askUSD: "8 750"
     },
     {
       id: 4,
       name: "Episodes 106 - 115",
       number: 4,
       status: "REQUESTING",
-      launched: "",
-      funded: "",
-      delivered: "",
-      askBCH: "",
-      askUSD: ""
+      launchDate: "6th February 2024",
+      fundDate: "TBD",
+      deliveryDate: "TBD",
+      askBCH: "25",
+      bchUsdPrice: "240",
+      askUSD: "6 000"
     }
-  ]
+  ].reverse()
 
   const requestingFlipstarterCount = podcastFlipstarters.filter(({ status }) => status === "REQUESTING").length.toString()
 
@@ -103,10 +107,12 @@ export default function Home() {
           </div>
 
           <p className="text-lg">FUNDING</p>
+          <p className="italic pb-2">$ values are USD unless otherwise specified.</p>
 
-          <p>Last Funded - x</p>
+          <p>All Time Funding:</p>
           <div>
-            <span class="pr-2">Flipstarters ({podcastFlipstarters.length.toString()})</span>
+            <span className="pr-2">{podcastFlipstarters.length.toString()}x Flipstarters</span>
+
             <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
               Requesting Funding ({requestingFlipstarterCount})
             </span>
@@ -120,12 +126,24 @@ export default function Home() {
               Failed ({failedFlipstarterCount})
             </span>
           </div>
-          <p>
-            #1:
-          </p>
-          <p>
-            Launched: x/x/x - x/x/x: Delivered
-          </p>
+          <p>13th April 2023 - January 26th 2024</p>
+          <p>67 BCH (USD $14 250) - excluding current requests</p>
+
+          <div className="py-2">
+            <p>Last Funded - November 30th 2023</p>
+            <p>Next Fundraising Expected - Currently In Progress</p>
+          </div>
+
+          {podcastFlipstarters.map(({ id, name, number, status, launchDate, fundDate, deliveryDate, askBCH, bchUsdPrice, askUSD }) => (
+            <div key={id} className={"py-2"}>
+              <p className={"text-lg"}>#{number}: {name}</p>
+              <p>{status}</p>
+              <p>Ask: {askBCH} BCH @ ${bchUsdPrice} / BCH (${askUSD})</p>
+              <p>Launched: {launchDate}</p>
+              <p>Funded: {fundDate}</p>
+              <p>Delivered: {deliveryDate}</p>
+            </div>
+          ))}
         </div>
       </div>
     </main>
