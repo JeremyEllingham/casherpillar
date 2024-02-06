@@ -77,8 +77,6 @@ export default function Home() {
         <p className="w-full">Grow the BCH Butterfly</p>
       </div>
 
-      <TabsRender />
-
       <div className="flex w-full border-solid border-2 border-slate-300">
         <div>
           <p className="text-xl flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-red-800/30">
@@ -116,7 +114,12 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="text-lg">FUNDING</p>
+          <div className="pt-2 pb-4">
+            <p className="text-2xl">Proof Of Work</p>
+            <a className="underline" href="https://bitcoincashpodcast.com/proof-of-work" target="_blank" >Click here</a>
+          </div>
+
+          <p className="text-2xl">Funding</p>
           <p className="italic pb-2">$ values are USD unless otherwise specified.</p>
 
           <p>All Time Funding:</p>
