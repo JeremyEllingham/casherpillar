@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TabsRender from "../components/Tabs"
 
 export default function Home() {
 
@@ -75,6 +76,8 @@ export default function Home() {
         </p>
         <p className="w-full">Grow the BCH Butterfly</p>
       </div>
+
+      <TabsRender />
 
       <div className="flex w-full border-solid border-2 border-slate-300">
         <div>
